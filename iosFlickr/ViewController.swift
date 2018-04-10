@@ -8,18 +8,56 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+let FlickrPlaceCellReuseIdentifier = "FlickrPlaceCell"
+let FlickrPlaceTableViewCellNibName = "FlickrPlaceTableViewCell"
+
+class ViewController: UIViewController, UITableViewDelegate, FlickrPlacesDelegate {
+
+    var dataSource: FlickrPlacesDataSource!
+
+    @IBOutlet weak var flickrPlaceSearchField: UISearchBar!
+    @IBOutlet weak var flickrPlacesTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.setupTableView()
+        self.setupSearchBar()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: FlickrPlacesDelegate methods
+
+    func flickrPlacesDidLoad(_ dataSource: FlickrPlacesDataSource) {
+        self.flickrPlacesTableView.reloadData()
+        if self.isViewLoaded {
+            self.view.endEditing(true)
+        }
     }
 
+    func flickrPlacesDidFail(_ dataSource: FlickrPlacesDataSource, errorMessage: String) {
+        self.present(alert(errorMessage), animated: true)
+    }
 
+    // MARK: views setup
+
+    private func setupTableView() {
+        self.dataSource = FlickrPlacesDataSource()
+        self.dataSource.delegate = self
+        self.flickrPlacesTableView.dataSource = self.dataSource
+
+        let flickrPlaceCellNib = UINib(nibName: FlickrPlaceTableViewCellNibName, bundle: nil)
+        self.flickrPlacesTableView.register(flickrPlaceCellNib, forCellReuseIdentifier: FlickrPlaceCellReuseIdentifier)
+    }
+
+    private func setupSearchBar() {
+        self.flickrPlaceSearchField.delegate = self
+    }
 }
 
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            searchBar.text = ""
+            self.dataSource.fetchData(searchQuery: text)
+        }
+    }
+}
