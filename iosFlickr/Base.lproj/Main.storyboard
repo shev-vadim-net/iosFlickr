@@ -61,6 +61,21 @@
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="d4R-C0-PDa">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="Fen-Ku-oHY" customClass="MapViewController" customModule="iosFlickr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6zl-E2-0yB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="bqu-5g-7e5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vPP-dj-A8l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1154" y="134"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="htf-WA-7mk">
             <objects>

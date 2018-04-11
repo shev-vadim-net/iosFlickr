@@ -9,27 +9,28 @@
 import Foundation
 import UIKit
 
-protocol FlickrPlacesDelegate {
-    func flickrPlacesDidLoad(_ dataSource: FlickrPlacesDataSource)
-    func flickrPlacesDidFail(_ dataSource: FlickrPlacesDataSource, errorMessage: String)
-}
+class FlickrPlacesDataSource: FLickrDataSource, UITableViewDataSource {
 
-class FlickrPlacesDataSource: NSObject, UITableViewDataSource {
-
-    var delegate: FlickrPlacesDelegate?
     var places: [FlickrPlace] = []
 
     func fetchData(searchQuery: String) {
         FlickrAPIManager.findPlaces(searchQuery: searchQuery, completionHandler: { [weak self] (places, error) in
             if let strongSelf = self {
                 if let error = error {
-                    strongSelf.delegate?.flickrPlacesDidFail(strongSelf, errorMessage: error)
+                    strongSelf.delegate?.flickrDataLoadDidFail(strongSelf, errorMessage: error)
                 } else {
                     strongSelf.places = places
-                    strongSelf.delegate?.flickrPlacesDidLoad(strongSelf)
+                    strongSelf.delegate?.flickrDataDidLoad(strongSelf)
                 }
             }
         })
+    }
+
+    func itemAtIndexPath(_ indexPath: IndexPath) -> FlickrPlace? {
+        guard indexPath.row < self.places.count else {
+            return nil
+        }
+        return self.places[indexPath.row]
     }
 
     // MARK: UITableViewDataSource methods

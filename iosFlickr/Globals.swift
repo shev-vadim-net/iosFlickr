@@ -13,6 +13,10 @@ import UIKit
 
 typealias UIAlertActionHandler = (UIAlertAction) -> Void
 
+// MARK: constants
+
+let GMS_API_KEY = "AIzaSyAc0aFmlGv27z2ZrKIEOi6RblTd5NP9-nc"
+
 // MARK: methods
 
 func alert(_ message: String, title: String = "Error", onClose: UIAlertActionHandler? = nil) -> UIAlertController {

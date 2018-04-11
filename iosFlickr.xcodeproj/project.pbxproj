@@ -12,6 +12,10 @@
 		DD172E56207C8EF800AAA38E /* FlickrPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD172E55207C8EF800AAA38E /* FlickrPlaceTableViewCell.swift */; };
 		DD172E58207CC10B00AAA38E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD172E57207CC10B00AAA38E /* Globals.swift */; };
 		DD172E5A207CD4CC00AAA38E /* FlickrAPIResponseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD172E59207CD4CC00AAA38E /* FlickrAPIResponseManager.swift */; };
+		DD172E5C207D220E00AAA38E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD172E5B207D220E00AAA38E /* MapViewController.swift */; };
+		DD172E5E207D289600AAA38E /* FlickrPlaceShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD172E5D207D289600AAA38E /* FlickrPlaceShape.swift */; };
+		DDBF06B5207DC2AA008639B9 /* FlickrHistoryShapesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBF06B4207DC2AA008639B9 /* FlickrHistoryShapesDataSource.swift */; };
+		DDBF06B7207DC316008639B9 /* FlickrDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBF06B6207DC316008639B9 /* FlickrDataSource.swift */; };
 		DDE85358207B4C72009783F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85357207B4C72009783F8 /* AppDelegate.swift */; };
 		DDE8535A207B4C72009783F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE85359207B4C72009783F8 /* ViewController.swift */; };
 		DDE8535D207B4C72009783F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE8535B207B4C72009783F8 /* Main.storyboard */; };
@@ -30,6 +34,10 @@
 		DD172E55207C8EF800AAA38E /* FlickrPlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPlaceTableViewCell.swift; sourceTree = "<group>"; };
 		DD172E57207CC10B00AAA38E /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		DD172E59207CD4CC00AAA38E /* FlickrAPIResponseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrAPIResponseManager.swift; sourceTree = "<group>"; };
+		DD172E5B207D220E00AAA38E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DD172E5D207D289600AAA38E /* FlickrPlaceShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPlaceShape.swift; sourceTree = "<group>"; };
+		DDBF06B4207DC2AA008639B9 /* FlickrHistoryShapesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrHistoryShapesDataSource.swift; sourceTree = "<group>"; };
+		DDBF06B6207DC316008639B9 /* FlickrDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrDataSource.swift; sourceTree = "<group>"; };
 		DDE85354207B4C72009783F8 /* iosFlickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosFlickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE85357207B4C72009783F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDE85359207B4C72009783F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +115,7 @@
 				DDE85369207B670D009783F8 /* Managers */,
 				DDE85357207B4C72009783F8 /* AppDelegate.swift */,
 				DDE85359207B4C72009783F8 /* ViewController.swift */,
+				DD172E5B207D220E00AAA38E /* MapViewController.swift */,
 				DDE8535B207B4C72009783F8 /* Main.storyboard */,
 				DDE8535E207B4C72009783F8 /* Assets.xcassets */,
 				DDE85360207B4C72009783F8 /* LaunchScreen.storyboard */,
@@ -129,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				DDE8536D207BBBE9009783F8 /* FlickrPlace.swift */,
+				DD172E5D207D289600AAA38E /* FlickrPlaceShape.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				DDE85370207BC509009783F8 /* FlickrPlacesDataSource.swift */,
+				DDBF06B4207DC2AA008639B9 /* FlickrHistoryShapesDataSource.swift */,
+				DDBF06B6207DC316008639B9 /* FlickrDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -267,8 +279,12 @@
 			files = (
 				DD172E5A207CD4CC00AAA38E /* FlickrAPIResponseManager.swift in Sources */,
 				DDE8535A207B4C72009783F8 /* ViewController.swift in Sources */,
+				DDBF06B5207DC2AA008639B9 /* FlickrHistoryShapesDataSource.swift in Sources */,
+				DDBF06B7207DC316008639B9 /* FlickrDataSource.swift in Sources */,
+				DD172E5E207D289600AAA38E /* FlickrPlaceShape.swift in Sources */,
 				DDE85371207BC509009783F8 /* FlickrPlacesDataSource.swift in Sources */,
 				DDE8536E207BBBE9009783F8 /* FlickrPlace.swift in Sources */,
+				DD172E5C207D220E00AAA38E /* MapViewController.swift in Sources */,
 				DDE85358207B4C72009783F8 /* AppDelegate.swift in Sources */,
 				DD172E56207C8EF800AAA38E /* FlickrPlaceTableViewCell.swift in Sources */,
 				DD172E58207CC10B00AAA38E /* Globals.swift in Sources */,
