@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Flickr Places-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iosFlickr" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,21 +38,48 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvj-gY-05E">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing to display" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9e-1u-nH3">
+                                        <rect key="frame" x="102" y="260.5" width="172.5" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="A9e-1u-nH3" firstAttribute="centerX" secondItem="Hvj-gY-05E" secondAttribute="centerX" id="S5d-f8-2ts"/>
+                                    <constraint firstItem="A9e-1u-nH3" firstAttribute="centerY" secondItem="Hvj-gY-05E" secondAttribute="centerY" id="hXI-xm-cQl"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0s7-Xn-Ep3">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cLS-IN-EvD" firstAttribute="top" secondItem="gYw-tI-sAr" secondAttribute="bottom" id="4jv-H7-CnB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cLS-IN-EvD" secondAttribute="bottom" id="7mC-33-Ecj"/>
+                            <constraint firstItem="0s7-Xn-Ep3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="96Y-oI-Vie"/>
+                            <constraint firstItem="Hvj-gY-05E" firstAttribute="top" secondItem="gYw-tI-sAr" secondAttribute="bottom" id="AeK-i8-ZfY"/>
                             <constraint firstItem="gYw-tI-sAr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Fqm-yV-aow"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cLS-IN-EvD" secondAttribute="trailing" id="KTb-js-WvA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hvj-gY-05E" secondAttribute="trailing" id="MhH-Vk-ver"/>
+                            <constraint firstItem="0s7-Xn-Ep3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N3N-GS-XcY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Hvj-gY-05E" secondAttribute="bottom" id="hDt-4A-zd9"/>
+                            <constraint firstItem="Hvj-gY-05E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jAv-eS-rCF"/>
                             <constraint firstItem="gYw-tI-sAr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="naD-ov-9O8"/>
                             <constraint firstItem="cLS-IN-EvD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sgc-OZ-J3O"/>
                             <constraint firstItem="gYw-tI-sAr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xzM-N4-Xln"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xJS-rU-cEa"/>
+                    <navigationItem key="navigationItem" title="Flickr Places" id="xJS-rU-cEa"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="0s7-Xn-Ep3" id="BGg-Uq-eZ4"/>
+                        <outlet property="coverView" destination="Hvj-gY-05E" id="BBX-EJ-OLC"/>
                         <outlet property="flickrPlaceSearchField" destination="gYw-tI-sAr" id="sZ6-M9-GuC"/>
                         <outlet property="flickrPlacesTableView" destination="cLS-IN-EvD" id="l95-Fh-IXe"/>
                     </connections>

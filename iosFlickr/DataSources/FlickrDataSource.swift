@@ -9,8 +9,14 @@
 import Foundation
 
 protocol FLickrDataSourceDelegate {
+    func flickrDataWillLoad(_ dataSource: FLickrDataSource)
     func flickrDataDidLoad(_ dataSource: FLickrDataSource)
     func flickrDataLoadDidFail(_ dataSource: FLickrDataSource, errorMessage: String)
+}
+
+extension FLickrDataSourceDelegate {
+    // This way protocol method becomes "optional"
+    func flickrDataWillLoad(_ dataSource: FLickrDataSource) {}
 }
 
 class FLickrDataSource: NSObject {

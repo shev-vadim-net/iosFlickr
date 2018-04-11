@@ -14,6 +14,7 @@ class FlickrPlacesDataSource: FLickrDataSource, UITableViewDataSource {
     var places: [FlickrPlace] = []
 
     func fetchData(searchQuery: String) {
+        self.delegate?.flickrDataWillLoad(self)
         FlickrAPIManager.findPlaces(searchQuery: searchQuery, completionHandler: { [weak self] (places, error) in
             if let strongSelf = self {
                 if let error = error {
